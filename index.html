@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alisa Mikhailovna Kujou - Thông tin nhân vật</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 40px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #1a237e, #283593, #3949ab);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-bottom: 5px solid #ff4081;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Search Bar Styles */
+        .search-container {
+            background-color: white;
+            padding: 20px;
+            margin: 25px auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            max-width: 800px;
+            position: relative;
+            z-index: 100;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+        }
+
+        #searchInput {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        #searchInput:focus {
+            border-color: #3949ab;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(57, 73, 171, 0.2);
+        }
+
+        #searchButton {
+            background: linear-gradient(to right, #3949ab, #283593);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        #searchButton:hover {
+            background: linear-gradient(to right, #283593, #1a237e);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        #searchResultsContainer {
+            margin-top: 15px;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #e0e0e0;
+        }
+
+        .search-result-item {
+            background-color: #f9f9f9;
+            padding: 12px 15px;
+            margin: 8px;
+            border-radius: 6px;
+            border-left: 4px solid #3949ab;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .search-result-item:hover {
+            background-color: #e8eaf6;
+            transform: translateX(5px);
+        }
+
+        .no-results {
+            padding: 15px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Content Styles */
+        .content-section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff4081;
+        }
+
+        /* Character Images */
+        .character-images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .character-img {
+            width: 280px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .character-img:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .nav-item {
+            background: linear-gradient(to right, #3949ab, #283593);
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+        }
+
+        .nav-item:hover {
+            background: linear-gradient(to right, #283593, #1a237e);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Media Section */
+        .media-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .media-container {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .media-title {
+            font-size: 1.4rem;
+            color: #1a237e;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .media-title i {
+            color: #ff4081;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .facebook {
+            background-color: #1877f2;
+            color: white;
+        }
+
+        .tiktok {
+            background-color: #000000;
+            color: white;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Highlight search results */
+        .highlight {
+            background-color: #fff9c4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .character-img {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+            }
+            
+            .media-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-item {
+                width: 80%;
+            }
+            
+            .search-box {
+                flex-direction: column;
+            }
+            
+            #searchButton {
+                padding: 15px;
+            }
+            
+            #searchResultsContainer {
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Chào mừng đến với thế giới của tôi</h1>
+            <h2>Tôi luôn ở đây vì bạn</h2>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Search Bar -->
+        <div class="search-container" id="searchContainer">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm thông tin về Alisa...">
+                <button id="searchButton"><i class="fas fa-search"></i> Tìm kiếm</button>
+            </div>
+            <div id="searchResultsContainer">
+                <!-- Search results will appear here -->
+            </div>
+        </div>
+
+        <!-- Character Images -->
+        <div class="character-images">
+            <img src="https://i.pinimg.com/736x/cf/4c/27/cf4c27c224ecb0cc1af3af48c1f4db90.jpg" alt="Alisa 1" class="character-img">
+            <img src="https://i.pinimg.com/736x/51/41/f2/5141f226b8c3dd88b6566953d2f06d05.jpg" alt="Alisa 2" class="character-img">
+        </div>
+
+        <!-- Character Information -->
+        <div class="content-section">
+            <h2 class="section-title">Thông tin nhân vật</h2>
+            <p><b>Alisa Mikhailovna Kujou (アリサ・ミハイロヴナ・九条, Arisa・Mihairovuna・Kujō ; tiếng Nga : Алиса Михайловна Кудзё ) / Alya (アーリャ, Ārya ; tiếng Nga : Аля )</b></p>
+            <p><b>Lồng tiếng bởi:</b> Sumire Uesaka (đĩa kịch, truyện tranh lồng tiếng, PV, anime) (tiếng Nhật); Sarah Natochenny (tiếng Anh)</p>
+            
+            <p id="content1">Alisa là một nữ sinh năm nhất xinh đẹp và tài năng, nổi tiếng nhờ vẻ ngoài và thái độ lạnh lùng. Cô sinh ra trong một gia đình có cha là người Nga và mẹ là người Nhật. Thỉnh thoảng, cô lại nói những câu bằng tiếng Nga, khiến giáo viên và bạn bè cùng lớp bối rối.</p>
+            
+            <p id="content2">Mặc dù nổi tiếng và thu hút sự chú ý của nhiều nam sinh và nữ sinh trong trường, nhưng vì thái độ lạnh lùng, Alisa không có nhiều bạn bè và không giỏi giao tiếp xã hội, dù điều đó dần thay đổi khi cô dành nhiều thời gian hơn với bạn cùng lớp Masachika. Cô không hài lòng với việc Masachika thiếu động lực học tập, nhưng đồng thời, cô dường như cũng có tình cảm với cậu ấy và liên tục tán tỉnh cậu ấy bằng tiếng Nga.</p>
+            
+            <p id="content3">Cô là em gái của Maria. Cô từng sống một thời gian ở Vladivostok, nơi cô gặp khó khăn trong việc kết bạn. Cô hiện là Thủ quỹ Hội học sinh và đang tranh cử chức Chủ tịch Hội học sinh, với Masachika là người đồng hành.</p>
+            
+            <p id="content4">Thái độ lạnh lùng của cô ấy có thể bắt nguồn từ những trải nghiệm ở Vladivostok. Có lần, khi đang làm dự án với các bạn cùng nhóm, cô nhận ra rằng các bạn ấy quá lười biếng và không chịu bắt đầu làm việc sớm. Sau đó, các bạn ấy lại cãi nhau với Alisa vì cô ấy làm việc quá chăm chỉ. Dự án sau đó thất bại, vì vậy cô quyết định tự mình làm việc chăm chỉ và tránh làm việc với người khác, dẫn đến thái độ lạnh lùng của cô ấy.</p>
+            
+            <p id="content5">Cô ấy thích ăn đồ ngọt và sợ ăn đồ cay.</p>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="content-section">
+            <h2 class="section-title">Khám phá thêm về Alisa</h2>
+            <div class="nav-menu">
+                <div class="nav-item"><a href="Ngoaihinh.html">Ngoại hình</a></div>
+                <div class="nav-item"><a href="tinhcach.html">Tính cách</a></div>
+                <div class="nav-item"><a href="lylich.html">Lý lịch</a></div>
+                <div class="nav-item"><a href="moiquanhe.html">Mối quan hệ</a></div>
+                <div class="nav-item"><a href="fact.html">Fact</a></div>
+                <div class="nav-item"><a href="trichloinoi.html">Trích lời nói</a></div>
+            </div>
+        </div>
+
+        <!-- Media Section -->
+        <div class="media-section">
+            <div class="media-container">
+                <h3 class="media-title"><i class="fas fa-video"></i> Video về Alisa</h3>
+                <video controls style="width: 100%; border-radius: 8px;">
+                    <source src="video/ssfrom.com--TWIXTOR-ALYA-EP10-4K-60FPS_720pFHR.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ video.
+                </video>
+            </div>
+
+            <div class="media-container">
+                <h3 class="media-title"><i class="fab fa-youtube"></i> Video YouTube</h3>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                            src="https://www.youtube.com/embed/H4vCzhJ5tcU?si=tHB6eAYp_ZfN8o3Z" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="content-section">
+            <h2 class="section-title">Liên hệ & Thắc mắc</h2>
+            <p style="text-align: center; margin-bottom: 20px;">Đây là thông tin liên hệ có gì thắc mắc xin cứ ib để hỏi ạ</p>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/nguyen.huy.anh.uc.2024?locale=vi_VN" class="social-link facebook" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                    Facebook
+                </a>
+                <a href="https://www.tiktok.com/@yukoanime187" class="social-link tiktok" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                    TikTok
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Trang web fan-made về Alisa Mikhailovna Kujou | © 2023</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dữ liệu tìm kiếm từ nội dung trang
+        const searchData = [
+            { 
+                title: "Thông tin chung", 
+                content: "Alisa là một nữ sinh năm nhất xinh đẹp và tài năng, nổi tiếng nhờ vẻ ngoài và thái độ lạnh lùng. Cô sinh ra trong một gia đình có cha là người Nga và mẹ là người Nhật.", 
+                sectionId: "content1",
+                type: "content"
+            },
+            { 
+                title: "Mối quan hệ với Masachika", 
+                content: "Alisa không hài lòng với việc Masachika thiếu động lực học tập, nhưng đồng thời, cô dường như cũng có tình cảm với cậu ấy và liên tục tán tỉnh cậu ấy bằng tiếng Nga.", 
+                sectionId: "content2",
+                type: "content"
+            },
+            { 
+                title: "Gia đình và sự nghiệp", 
+                content: "Cô là em gái của Maria. Cô từng sống một thời gian ở Vladivostok, nơi cô gặp khó khăn trong việc kết bạn. Cô hiện là Thủ quỹ Hội học sinh và đang tranh cử chức Chủ tịch Hội học sinh.", 
+                sectionId: "content3",
+                type: "content"
+            },
+            { 
+                title: "Tính cách và trải nghiệm", 
+                content: "Thái độ lạnh lùng của cô ấy có thể bắt nguồn từ những trải nghiệm ở Vladivostok khi làm việc nhóm thất bại.", 
+                sectionId: "content4",
+                type: "content"
+            },
+            { 
+                title: "Sở thích ẩm thực", 
+                content: "Cô ấy thích ăn đồ ngọt và sợ ăn đồ cay.", 
+                sectionId: "content5",
+                type: "content"
+            },
+            { 
+                title: "Ngoại hình", 
+                content: "Alisa có ngoại hình xinh đẹp và tài năng, nổi tiếng trong trường học.", 
+                page: "Ngoaihinh.html",
+                type: "page"
+            },
+            { 
+                title: "Tính cách", 
+                content: "Bề ngoài lạnh lùng nhưng thực chất Alisa là người chăm chỉ và có trách nhiệm cao.", 
+                page: "tinhcach.html",
+                type: "page"
+            },
+            { 
+                title: "Lý lịch", 
+                content: "Alisa sinh ra trong gia đình cha Nga mẹ Nhật, từng sống ở Vladivostok.", 
+                page: "lylich.html",
+                type: "page"
+            },
+            { 
+                title: "Mối quan hệ", 
+                content: "Alisa có tình cảm với Masachika và là em gái của Maria.", 
+                page: "moiquanhe.html",
+                type: "page"
+            },
+            { 
+                title: "Fact", 
+                content: "Alisa thích đồ ngọt nhưng sợ đồ cay, thỉnh thoảng nói tiếng Nga khi xúc động.", 
+                page: "fact.html",
+                type: "page"
+            },
+            { 
+                title: "Trích lời nói", 
+                content: "Những câu nói đáng nhớ bằng cả tiếng Nhật và tiếng Nga của Alisa.", 
+                page: "trichloinoi.html",
+                type: "page"
+            }
+        ];
+
+        // Lấy các phần tử DOM
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const searchResultsContainer = document.getElementById('searchResultsContainer');
+        const searchContainer = document.getElementById('searchContainer');
+
+        // Xử lý tìm kiếm
+        function performSearch() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            
+            if (searchTerm === '') {
+                searchResultsContainer.style.display = 'none';
+                return;
+            }
+            
+            // Lọc kết quả
+            const filteredResults = searchData.filter(item => {
+                const titleMatch = item.title.toLowerCase().includes(searchTerm);
+                const contentMatch = item.content.toLowerCase().includes(searchTerm);
+                return titleMatch || contentMatch;
+            });
+            
+            // Hiển thị kết quả
+            if (filteredResults.length > 0) {
+                let resultsHTML = '';
+                
+                filteredResults.forEach((result, index) => {
+                    // Làm nổi bật từ khóa tìm kiếm trong kết quả
+                    const highlightedTitle = highlightText(result.title, searchTerm);
+                    const highlightedContent = highlightText(result.content, searchTerm);
+                    
+                    let action = '';
+                    if (result.type === 'page') {
+                        // THAY ĐỔI Ở ĐÂY: Thực sự chuyển trang thay vì alert
+                        action = `onclick="window.location.href='${result.page}'"`;
+                    } else if (result.type === 'content') {
+                        action = `onclick="scrollToContent('${result.sectionId}', '${searchTerm}')"`;
+                    }
+                    
+                    resultsHTML += `
+                        <div class="search-result-item" ${action} data-index="${index}">
+                            <strong>${highlightedTitle}</strong>
+                            <p style="margin-top: 5px; font-size: 0.9rem; color: #666;">${highlightedContent}</p>
+                            <small style="color: #888; font-style: italic;">
+                                ${result.type === 'page' ? 'Trang' : 'Nội dung'}
+                            </small>
+                        </div>
+                    `;
+                });
+                
+                searchResultsContainer.innerHTML = resultsHTML;
+                searchResultsContainer.style.display = 'block';
+            } else {
+                searchResultsContainer.innerHTML = '<div class="no-results">Không tìm thấy kết quả phù hợp. Hãy thử từ khóa khác.</div>';
+                searchResultsContainer.style.display = 'block';
+            }
+        }
+        
+        // Hàm làm nổi bật văn bản
+        function highlightText(text, searchTerm) {
+            if (!searchTerm || searchTerm.trim() === '') return text;
+            
+            // Escape các ký tự đặc biệt trong regex
+            const escapedTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(`(${escapedTerm})`, 'gi');
+            return text.replace(regex, '<span class="highlight">$1</span>');
+        }
+        
+        // Cuộn đến phần nội dung
+        function scrollToContent(sectionId, searchTerm) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                // Lưu nội dung gốc
+                const originalHTML = section.innerHTML;
+                const originalText = section.textContent;
+                
+                // Làm nổi bật nội dung
+                const highlightedContent = highlightText(originalText, searchTerm);
+                section.innerHTML = highlightedContent;
+                
+                // Cuộn đến phần tử
+                section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Thêm hiệu ứng highlight
+                section.style.backgroundColor = '#fff9c4';
+                section.style.transition = 'background-color 0.5s';
+                section.style.padding = '10px';
+                section.style.borderRadius = '5px';
+                section.style.margin = '5px 0';
+                
+                // Khôi phục sau 3 giây
+                setTimeout(() => {
+                    section.innerHTML = originalHTML;
+                    section.style.backgroundColor = '';
+                    section.style.padding = '';
+                    section.style.borderRadius = '';
+                    section.style.margin = '';
+                }, 3000);
+            }
+            
+            searchResultsContainer.style.display = 'none';
+            searchInput.value = '';
+        }
+        
+        // Event Listeners
+        searchButton.addEventListener('click', performSearch);
+        
+        searchInput.addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        // Ẩn kết quả tìm kiếm khi click ra ngoài
+        document.addEventListener('click', function(event) {
+            const isClickInsideSearch = searchContainer.contains(event.target);
+            const isClickInsideResults = searchResultsContainer.contains(event.target);
+            
+            if (!isClickInsideSearch && !isClickInsideResults) {
+                searchResultsContainer.style.display = 'none';
+            }
+        });
+        
+        // Giữ kết quả tìm kiếm khi click vào chúng
+        searchResultsContainer.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+        
+        // Tự động hiển thị gợi ý khi focus vào ô tìm kiếm
+        searchInput.addEventListener('focus', function() {
+            if (searchInput.value.trim() !== '') {
+                performSearch();
+            }
+        });
+        
+        // Gợi ý từ khóa tìm kiếm phổ biến
+        const popularKeywords = ['Alisa', 'Ngoại hình', 'Tính cách', 'Masachika', 'Tiếng Nga', 'Vladivostok'];
+        let keywordIndex = 0;
+        
+        // Thay đổi placeholder mỗi 3 giây
+        function changePlaceholder() {
+            if (document.activeElement !== searchInput) {
+                searchInput.placeholder = `Tìm kiếm: ${popularKeywords[keywordIndex]}...`;
+                keywordIndex = (keywordIndex + 1) % popularKeywords.length;
+            }
+        }
+        
+        // Bắt đầu thay đổi placeholder
+        const placeholderInterval = setInterval(changePlaceholder, 3000);
+        changePlaceholder(); // Chạy lần đầu
+        
+        // Dọn dẹp interval khi trang đóng
+        window.addEventListener('beforeunload', function() {
+            clearInterval(placeholderInterval);
+        });
+    </script>
+</body>
+</html>

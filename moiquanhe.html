@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mối quan hệ Alisa Mikhailovna Kujou</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffeef0 100%);
+            color: #333;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #c2185b, #d81b60, #e91e63);
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-bottom: 5px solid #3949ab;
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .back-button {
+            margin-top: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Styles */
+        .content-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #c2185b;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3949ab;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: #3949ab;
+        }
+
+        /* Relationship Grid */
+        .relationship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .relationship-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s;
+            border: 1px solid #f0f0f0;
+        }
+
+        .relationship-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            padding: 25px;
+            background: linear-gradient(135deg, #3949ab, #283593);
+            color: white;
+            position: relative;
+            min-height: 120px;
+        }
+
+        .relationship-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .relationship-type {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+
+        .relationship-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid white;
+            position: absolute;
+            right: 25px;
+            top: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .relationship-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .relationship-timeline {
+            background: linear-gradient(135deg, #f9f9ff, #f0f2ff);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .timeline-title {
+            color: #3949ab;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timeline-item {
+            padding: 10px 0;
+            border-bottom: 1px dashed #ddd;
+            display: flex;
+            gap: 10px;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-icon {
+            color: #c2185b;
+            min-width: 20px;
+        }
+
+        /* Special Card for Masachika */
+        .masachika-card .card-header {
+            background: linear-gradient(135deg, #c2185b, #ad1457);
+        }
+
+        /* Special Card for Yuki */
+        .yuki-card .card-header {
+            background: linear-gradient(135deg, #7b1fa2, #6a1b9a);
+        }
+
+        /* Special Card for Maria */
+        .maria-card .card-header {
+            background: linear-gradient(135deg, #0288d1, #0277bd);
+        }
+
+        /* Relationship Status */
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .status-romantic {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .status-friendly {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status-sibling {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .status-complicated {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 5px solid #c2185b;
+            position: relative;
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            background: #c2185b;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #880e4f;
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 0 20px;
+        }
+
+        .quote-author {
+            text-align: right;
+            color: #555;
+            font-weight: 600;
+        }
+
+        /* Relationship Chart - ĐÃ SỬA LỖI */
+        .chart-section {
+            margin: 50px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f9f9ff, #f0f2ff);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        /* Center circle */
+        .chart-center {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #c2185b, #d81b60);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 25px rgba(194, 24, 91, 0.3);
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Outer circle for connections */
+        .chart-outer-circle {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+        }
+
+        @media (max-width: 768px) {
+            .chart-outer-circle {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        /* Node positions */
+        .chart-node {
+            position: absolute;
+            width: 120px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .chart-node:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            z-index: 20;
+        }
+
+        /* Node positions around the circle */
+        .node-1 {
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .node-2 {
+            top: 30%;
+            right: 10%;
+        }
+
+        .node-3 {
+            bottom: 30%;
+            right: 10%;
+        }
+
+        .node-4 {
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .node-5 {
+            bottom: 30%;
+            left: 10%;
+        }
+
+        .node-6 {
+            top: 30%;
+            left: 10%;
+        }
+
+        @media (max-width: 768px) {
+            .node-1, .node-2, .node-3, .node-4, .node-5, .node-6 {
+                position: static;
+                transform: none;
+                margin: 15px;
+                width: 100px;
+                padding: 10px;
+            }
+            
+            .chart-container {
+                flex-direction: column;
+            }
+            
+            .chart-outer-circle {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        /* Connection lines */
+        .connection-line {
+            position: absolute;
+            background: linear-gradient(to right, #c2185b, #3949ab);
+            height: 2px;
+            transform-origin: 0 0;
+            z-index: 1;
+        }
+
+        /* Connection labels */
+        .connection-label {
+            position: absolute;
+            font-size: 0.8rem;
+            color: #666;
+            background: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 15;
+        }
+
+        /* Page Navigation */
+        .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-button {
+            background: linear-gradient(to right, #c2185b, #ad1457);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .nav-button:hover {
+            background: linear-gradient(to right, #ad1457, #880e4f);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #666;
+            font-size: 0.9rem;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .relationship-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .relationship-image {
+                width: 80px;
+                height: 80px;
+                right: 15px;
+                top: 15px;
+            }
+            
+            .page-navigation {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-button {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Mối quan hệ Alisa Mikhailovna Kujou</h1>
+                <div class="subtitle">Những mối liên kết đặc biệt trong cuộc đời tsundere</div>
+                <button class="back-button" onclick="goBack()">
+                    <i class="fas fa-arrow-left"></i> Quay lại trang chính
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Main Content Section -->
+        <div class="content-section">
+            <!-- Introduction -->
+            <h2 class="section-title">
+                <i class="fas fa-heart"></i> Mạng lưới quan hệ
+            </h2>
+            
+            <p style="margin-bottom: 30px; font-size: 1.1rem; color: #555;">
+                Alisa có những mối quan hệ phức tạp và đa dạng, từ tình yêu, tình bạn đến tình chị em. Mỗi mối quan hệ đều có những đặc điểm riêng biệt và đóng vai trò quan trọng trong sự phát triển tính cách của cô.
+            </p>
+
+            <!-- Relationship Grid -->
+            <div class="relationship-grid">
+                <!-- Masachika Card -->
+                <div class="relationship-card masachika-card">
+                    <div class="card-header">
+                        <h3 class="relationship-title">
+                            <i class="fas fa-heart"></i> Masachika Kuze
+                            <span class="relationship-type">Tình yêu</span>
+                        </h3>
+                        <p>Bạn cùng lớp & Người yêu</p>
+                        <img src="https://i.pinimg.com/736x/a4/e5/3b/a4e53b7282cb924cb2fbeb236fbc657b.jpg" 
+                             alt="Masachika Kuze" 
+                             class="relationship-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="status-indicator status-romantic">
+                            <i class="fas fa-heart"></i> Mối quan hệ lãng mạn
+                        </div>
+                        
+                        <p class="relationship-description">
+                            Cậu học sinh duy nhất không hề tỏ ra quan tâm đến Alisa, điều này để lại ấn tượng sâu sắc trong lòng cô. Tuy nhiên, khi bắt đầu để ý đến Masachika, Alisa nhận ra ngay rằng không phải Masachika không thích con gái hay người khác, mà chỉ là cậu ta là một người thiếu động lực.
+                        </p>
+                        
+                        <div class="relationship-timeline">
+                            <h4 class="timeline-title">
+                                <i class="fas fa-history"></i> Cột mốc quan trọng
+                            </h4>
+                            <div class="timeline-item">
+                                <i class="fas fa-heart timeline-icon"></i>
+                                <span>Lễ hội trường năm cuối cấp trung học: Masachika giúp đỡ Alisa và cô bắt đầu tán tỉnh cậu bằng tiếng Nga</span>
+                            </div>
+                            <div class="timeline-item">
+                                <i class="fas fa-heart timeline-icon"></i>
+                                <span>Năm nhất trung học: Masachika tình nguyện làm bạn đồng hành của Alisa trong hội học sinh</span>
+                            </div>
+                            <div class="timeline-item">
+                                <i class="fas fa-heart timeline-icon"></i>
+                                <span>Kỳ nghỉ hè: Hôn lên má dưới ánh pháo hoa, đánh dấu bước ngoặt trong mối quan hệ</span>
+                            </div>
+                            <div class="timeline-item">
+                                <i class="fas fa-heart timeline-icon"></i>
+                                <span>Ngày hội thể thao: Alisa chính thức thừa nhận yêu Masachika</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yuki Card -->
+                <div class="relationship-card yuki-card">
+                    <div class="card-header">
+                        <h3 class="relationship-title">
+                            <i class="fas fa-user-friends"></i> Yuki Suou
+                            <span class="relationship-type">Bạn bè & Đối thủ</span>
+                        </h3>
+                        <p>Bạn học & Đối thủ bầu cử</p>
+                        <img src="https://i.pinimg.com/736x/9b/72/d2/9b72d2b82533190cf1fec5ddabc5674d.jpg" 
+                             alt="Yuki Suou" 
+                             class="relationship-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="status-indicator status-complicated">
+                            <i class="fas fa-balance-scale"></i> Quan hệ phức tạp
+                        </div>
+                        
+                        <p class="relationship-description">
+                            Mối quan hệ giữa Alisa và Yuki là kiểu mà Yuki thường trêu chọc Alisa. Alisa hiểu nhầm mối quan hệ giữa Yuki và Masachika, tin rằng họ đang có mối quan hệ tình cảm trong khi thực tế Yuki là em gái của Masachika.
+                        </p>
+                        
+                        <div class="relationship-timeline">
+                            <h4 class="timeline-title">
+                                <i class="fas fa-history"></i> Tương tác đáng nhớ
+                            </h4>
+                            <div class="timeline-item">
+                                <i class="fas fa-users timeline-icon"></i>
+                                <span>Cạnh tranh cho vị trí chủ tịch hội học sinh, tạo nên động lực cho cả hai</span>
+                            </div>
+                            <div class="timeline-item">
+                                <i class="fas fa-users timeline-icon"></i>
+                                <span>Trong kỳ nghỉ hè, cùng ở chung phòng và trò chuyện về các chàng trai</span>
+                            </div>
+                            <div class="timeline-item">
+                                <i class="fas fa-users timeline-icon"></i>
+                                <span>Yuki cố tình tạo cơ hội để Masachika và Alisa gần gũi hơn</span>
+                            </div>
+                            <div class="timeline-item">
+                                <i class="fas fa-users timeline-icon"></i>
+                                <span>Trò chơi Vua với mệnh lệnh hôn nhau tạo nên khoảnh khắc đáng nhớ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maria Card -->
+                <div class="relationship-card maria-card">
+                    <div class="card-header">
+                        <h3 class="relationship-title">
+                            <i class="fas fa-user-friends"></i> Maria Kujou
+                            <span class="relationship-type">Gia đình</span>
+                        </h3>
+                        <p>Chị gái</p>
+                        <img src="https://i.pinimg.com/736x/cc/1e/ea/cc1eeaac6b5d4a780c57f51b29dfc81c.jpg" 
+                             alt="Maria Kujou" 
+                             class="relationship-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="status-indicator status-sibling">
+                            <i class="fas fa-users"></i> Quan hệ chị em
+                        </div>
+                        
+                        <p class="relationship-description">
+                            Maria là chị gái của Alisa và luôn trêu chọc em gái mỗi khi có cơ hội. Maria muốn Alisa gọi mình là 'Onee-san'. Trong khi Maria có phần ấm áp với em gái, Alisa lại có vẻ khá lạnh lùng với Maria.
+                        </p>
+                        
+                        <div class="relationship-timeline">
+                            <h4 class="timeline-title">
+                                <i class="fas fa-history"></i> Tương tác chị em
+                            </h4>
+                            <div class="timeline-item">
+                                <i class="fas fa-home timeline-icon"></i>
+                                <span>Cùng sinh ra ở Nga và trải qua nhiều lần chuyển đổi giữa Nga và Nhật Bản</span>
+                            </div>
+                            <div class="timeline-item">
+                                <i class="fas fa-home timeline-icon"></i>
+                                <span>Maria thường xuyên trêu chọc và muốn được Alisa gọi là "Onee-san"</span>
+                            </div>
+                            <div class="timeline-item">
+                                <i class="fas fa-home timeline-icon"></i>
+                                <span>Alisa từ chối ở chung phòng với Maria trong kỳ nghỉ hè, chọn ở với Yuki và Ayano</span>
+                            </div>
+                            <div class="timeline-item">
+                                <i class="fas fa-home timeline-icon"></i>
+                                <span>Alisa không biết sự thật về mối quan hệ cũ giữa Maria và Masachika</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Relationship Chart - ĐÃ SỬA LỖI -->
+            <div class="chart-section">
+                <h2 class="section-title">
+                    <i class="fas fa-project-diagram"></i> Sơ đồ quan hệ
+                </h2>
+                
+                <div class="chart-container">
+                    <div class="chart-outer-circle">
+                        <!-- Center - Alisa -->
+                        <div class="chart-center" id="alisaCenter">
+                            <i class="fas fa-female" style="font-size: 2rem; margin-bottom: 5px;"></i>
+                            Alisa<br>Kujou
+                        </div>
+                        
+                        <!-- Nodes around the circle -->
+                        <div class="chart-node node-1" id="masachikaNode">
+                            <i class="fas fa-heart" style="color: #c2185b; margin-bottom: 5px;"></i>
+                            Masachika<br><small>Người yêu</small>
+                        </div>
+                        
+                        <div class="chart-node node-2" id="yukiNode">
+                            <i class="fas fa-user-friends" style="color: #7b1fa2; margin-bottom: 5px;"></i>
+                            Yuki Suou<br><small>Bạn & Đối thủ</small>
+                        </div>
+                        
+                        <div class="chart-node node-3" id="mariaNode">
+                            <i class="fas fa-users" style="color: #0288d1; margin-bottom: 5px;"></i>
+                            Maria<br><small>Chị gái</small>
+                        </div>
+                        
+                        <div class="chart-node node-4" id="schoolNode">
+                            <i class="fas fa-school" style="color: #388e3c; margin-bottom: 5px;"></i>
+                            Cộng đồng<br><small>Trường học</small>
+                        </div>
+                        
+                        <div class="chart-node node-5" id="parentsNode">
+                            <i class="fas fa-home" style="color: #f57c00; margin-bottom: 5px;"></i>
+                            Bố Mẹ<br><small>Gia đình</small>
+                        </div>
+                        
+                        <div class="chart-node node-6" id="classmatesNode">
+                            <i class="fas fa-graduation-cap" style="color: #5d4037; margin-bottom: 5px;"></i>
+                            Bạn học<br><small>Trường Seirei</small>
+                        </div>
+                        
+                        <!-- Connection lines will be drawn by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quote Section -->
+            <div class="quote-section">
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="quote-text">
+                    "Tình yêu của một tsundere như Alisa không bao giờ đơn giản, nhưng chính sự phức tạp đó lại tạo nên vẻ đẹp độc đáo trong những mối quan hệ của cô."
+                </p>
+                <p class="quote-author">- Phân tích từ người hâm mộ</p>
+            </div>
+
+            <!-- Additional Relationships -->
+            <h2 class="section-title" style="margin-top: 50px;">
+                <i class="fas fa-link"></i> Mối quan hệ khác
+            </h2>
+            
+            <div style="background: #f9f9f9; border-radius: 12px; padding: 25px; margin-top: 20px;">
+                <h3 style="color: #c2185b; margin-bottom: 15px;">Cộng đồng trường học</h3>
+                <p style="color: #555; line-height: 1.7;">
+                    Sau khi đạt vị trí thứ nhất trong kỳ thi năng lực ngay sau khi chuyển trường, Alisa trở nên nổi tiếng trong số các học sinh. Mọi người bắt đầu vây quanh cô như thể cô là một người nổi tiếng. Vẻ đẹp tuyệt trần của Alisa cũng góp phần vào sự nổi tiếng của cô. Mặc dù thu hút sự chú ý của hầu hết mọi người xung quanh, cô vẫn sẽ ngạc nhiên nếu thấy một chàng trai nào đó không quan tâm đến mình.
+                </p>
+                
+                <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+                    <div style="background: white; padding: 15px; border-radius: 8px; flex: 1; min-width: 200px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                        <h4 style="color: #3949ab; margin-bottom: 10px;">Động lực cạnh tranh</h4>
+                        <p style="font-size: 0.9rem;">Alisa luôn tìm kiếm những người có thể cạnh tranh ngang ngửa với mình trong học tập và phát triển bản thân.</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 15px; border-radius: 8px; flex: 1; min-width: 200px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                        <h4 style="color: #3949ab; margin-bottom: 10px;">Kỳ vọng xã hội</h4>
+                        <p style="font-size: 0.9rem;">Mặc dù được nhiều người ngưỡng mộ, Alisa vẫn cảm thấy cô đơn vì ít người thực sự hiểu được con người thật của cô.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="page-navigation">
+                <a href="index.html" class="nav-button">
+                    <i class="fas fa-home"></i> Trang chính
+                </a>
+                
+                <div style="display: flex; gap: 15px;">
+                    <a href="lylich.html" class="nav-button">
+                        <i class="fas fa-arrow-left"></i> Trang trước (Lý lịch)
+                    </a>
+                    
+                    <a href="fact.html" class="nav-button">
+                        Trang tiếp theo (Fact) <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Trang web fan-made về Alisa Mikhailovna Kujou | © 2023 | Mối quan hệ</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to go back to previous page
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+        
+        // Draw connection lines between nodes
+        function drawConnections() {
+            const center = document.getElementById('alisaCenter');
+            const nodes = [
+                document.getElementById('masachikaNode'),
+                document.getElementById('yukiNode'),
+                document.getElementById('mariaNode'),
+                document.getElementById('schoolNode'),
+                document.getElementById('parentsNode'),
+                document.getElementById('classmatesNode')
+            ];
+            
+            const centerRect = center.getBoundingClientRect();
+            const containerRect = document.querySelector('.chart-outer-circle').getBoundingClientRect();
+            
+            // Calculate center position relative to container
+            const centerX = centerRect.left + centerRect.width/2 - containerRect.left;
+            const centerY = centerRect.top + centerRect.height/2 - containerRect.top;
+            
+            // Remove existing connection lines
+            document.querySelectorAll('.connection-line').forEach(el => el.remove());
+            document.querySelectorAll('.connection-label').forEach(el => el.remove());
+            
+            // Draw lines to each node
+            nodes.forEach(node => {
+                if (!node) return;
+                
+                const nodeRect = node.getBoundingClientRect();
+                const nodeX = nodeRect.left + nodeRect.width/2 - containerRect.left;
+                const nodeY = nodeRect.top + nodeRect.height/2 - containerRect.top;
+                
+                // Calculate distance and angle
+                const dx = nodeX - centerX;
+                const dy = nodeY - centerY;
+                const distance = Math.sqrt(dx*dx + dy*dy);
+                const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+                
+                // Create line element
+                const line = document.createElement('div');
+                line.className = 'connection-line';
+                line.style.width = distance + 'px';
+                line.style.left = centerX + 'px';
+                line.style.top = centerY + 'px';
+                line.style.transform = `rotate(${angle}deg)`;
+                
+                // Add line color based on relationship type
+                if (node.id === 'masachikaNode') {
+                    line.style.background = 'linear-gradient(to right, #c2185b, #ad1457)';
+                    line.style.height = '3px';
+                } else if (node.id === 'yukiNode') {
+                    line.style.background = 'linear-gradient(to right, #7b1fa2, #6a1b9a)';
+                } else if (node.id === 'mariaNode') {
+                    line.style.background = 'linear-gradient(to right, #0288d1, #0277bd)';
+                } else {
+                    line.style.background = 'linear-gradient(to right, #666, #888)';
+                }
+                
+                document.querySelector('.chart-outer-circle').appendChild(line);
+                
+                // Add label in the middle of the line
+                const label = document.createElement('div');
+                label.className = 'connection-label';
+                
+                // Set label text based on node
+                let labelText = '';
+                if (node.id === 'masachikaNode') labelText = 'Tình yêu';
+                else if (node.id === 'yukiNode') labelText = 'Bạn/Đối thủ';
+                else if (node.id === 'mariaNode') labelText = 'Chị gái';
+                else if (node.id === 'schoolNode') labelText = 'Cộng đồng';
+                else if (node.id === 'parentsNode') labelText = 'Gia đình';
+                else if (node.id === 'classmatesNode') labelText = 'Bạn học';
+                
+                label.textContent = labelText;
+                label.style.left = (centerX + dx/2 - 40) + 'px';
+                label.style.top = (centerY + dy/2 - 15) + 'px';
+                
+                document.querySelector('.chart-outer-circle').appendChild(label);
+            });
+        }
+        
+        // Add animation for relationship cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const relationshipCards = document.querySelectorAll('.relationship-card');
+            const chartNodes = document.querySelectorAll('.chart-node');
+            
+            // Observer for relationship cards
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Set initial state and observe relationship cards
+            relationshipCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                cardObserver.observe(card);
+            });
+            
+            // Observer for chart nodes
+            const chartObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'scale(1)';
+                        }, index * 150);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Set initial state and observe chart nodes
+            chartNodes.forEach(node => {
+                node.style.opacity = '0';
+                node.style.transform = 'scale(0.8)';
+                node.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                chartObserver.observe(node);
+            });
+            
+            // Animate chart center
+            const chartCenter = document.getElementById('alisaCenter');
+            if (chartCenter) {
+                chartCenter.style.opacity = '0';
+                chartCenter.style.transform = 'scale(0.8)';
+                chartCenter.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                
+                const centerObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'scale(1)';
+                                // Draw connections after center appears
+                                setTimeout(drawConnections, 300);
+                            }, 300);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                centerObserver.observe(chartCenter);
+            }
+            
+            // Redraw connections on window resize
+            window.addEventListener('resize', function() {
+                setTimeout(drawConnections, 100);
+            });
+            
+            // Draw connections initially
+            setTimeout(drawConnections, 500);
+            
+            // Add click effect to relationship cards
+            relationshipCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-10px)';
+                    }, 150);
+                });
+            });
+            
+            // Add hover effect for chart nodes
+            chartNodes.forEach(node => {
+                node.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '20';
+                    this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.2)';
+                    
+                    // Highlight connection line
+                    const nodeId = this.id;
+                    document.querySelectorAll('.connection-line').forEach(line => {
+                        if (line.style.background.includes(this.dataset.color || '')) {
+                            line.style.height = '4px';
+                            line.style.boxShadow = '0 0 10px rgba(0,0,0,0.3)';
+                        }
+                    });
+                });
+                
+                node.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '10';
+                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                    
+                    // Reset connection lines
+                    document.querySelectorAll('.connection-line').forEach(line => {
+                        line.style.height = '2px';
+                        line.style.boxShadow = 'none';
+                    });
+                });
+            });
+            
+            // Add pulse animation to relationship status indicators
+            const statusIndicators = document.querySelectorAll('.status-indicator');
+            statusIndicators.forEach(indicator => {
+                indicator.addEventListener('mouseenter', function() {
+                    this.style.animation = 'pulse 0.5s ease';
+                });
+                
+                indicator.addEventListener('animationend', function() {
+                    this.style.animation = '';
+                });
+            });
+            
+            // Add CSS for pulse animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes pulse {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.05); }
+                    100% { transform: scale(1); }
+                }
+                
+                .connection-line {
+                    transition: all 0.3s ease;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+        
+        // Add relationship card flip effect on double click
+        const relationshipCards = document.querySelectorAll('.relationship-card');
+        relationshipCards.forEach(card => {
+            let clickCount = 0;
+            let clickTimer;
+            
+            card.addEventListener('click', function() {
+                clickCount++;
+                if (clickCount === 1) {
+                    clickTimer = setTimeout(() => {
+                        clickCount = 0;
+                    }, 300);
+                } else if (clickCount === 2) {
+                    clearTimeout(clickTimer);
+                    clickCount = 0;
+                    
+                    // Add flip effect
+                    this.style.transform = 'rotateY(180deg)';
+                    setTimeout(() => {
+                        this.style.transform = 'rotateY(0deg)';
+                    }, 600);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

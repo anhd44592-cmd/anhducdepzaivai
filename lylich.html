@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lý lịch Alisa Mikhailovna Kujou</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
+            color: #333;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #1a237e, #283593, #3949ab);
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-bottom: 5px solid #ff4081;
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .back-button {
+            margin-top: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Styles */
+        .content-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #1a237e;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ff4081;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: #ff4081;
+        }
+
+        /* Timeline Styles */
+        .timeline-container {
+            position: relative;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #3949ab;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-container::before {
+                left: 31px;
+            }
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+        }
+
+        .timeline-icon {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3949ab, #283593);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            right: -25px;
+            top: 15px;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-item:nth-child(even) .timeline-icon {
+            left: -25px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-icon {
+                left: 10px;
+                right: auto;
+            }
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background: linear-gradient(145deg, #f8f9ff, #eef1ff);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .timeline-year {
+            color: #3949ab;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timeline-description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Family Background Section */
+        .family-background {
+            background: linear-gradient(135deg, #fff8e1, #fff3e0);
+            border-radius: 12px;
+            padding: 35px;
+            margin: 40px 0;
+            border-left: 5px solid #ff9800;
+        }
+
+        .family-title {
+            color: #e65100;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .family-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .family-member {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .family-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-name {
+            color: #1a237e;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ff4081;
+        }
+
+        .member-relation {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        /* Personality Development Section */
+        .development-section {
+            margin: 50px 0;
+        }
+
+        .development-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .development-card {
+            background: linear-gradient(145deg, #e8f5e9, #f1f8e9);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+            border-left: 5px solid #4caf50;
+            transition: all 0.3s;
+        }
+
+        .development-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .development-title {
+            color: #2e7d32;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* School Achievement */
+        .achievement-section {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 12px;
+            padding: 35px;
+            margin: 40px 0;
+            border-left: 5px solid #2196f3;
+        }
+
+        .achievement-title {
+            color: #0d47a1;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .achievement-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievement-list li {
+            padding: 12px 0;
+            border-bottom: 1px dashed #90caf9;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .achievement-list li:last-child {
+            border-bottom: none;
+        }
+
+        .achievement-list i {
+            color: #2196f3;
+            margin-top: 5px;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Page Navigation */
+        .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-button {
+            background: linear-gradient(to right, #3949ab, #283593);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .nav-button:hover {
+            background: linear-gradient(to right, #283593, #1a237e);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #666;
+            font-size: 0.9rem;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .page-navigation {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-button {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Lý lịch Alisa Mikhailovna Kujou</h1>
+                <div class="subtitle">Hành trình từ Nga đến Nhật Bản của một thiên tài tsundere</div>
+                <button class="back-button" onclick="goBack()">
+                    <i class="fas fa-arrow-left"></i> Quay lại trang chính
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Main Content Section -->
+        <div class="content-section">
+            <!-- Introduction -->
+            <h2 class="section-title">
+                <i class="fas fa-history"></i> Xuất thân và gia đình
+            </h2>
+            
+            <div class="intro-text" style="margin-bottom: 30px;">
+                <p>Cô ấy xuất thân từ một gia đình khá giả. Nhờ đặc quyền và môi trường được nuông chiều, cô ấy đã xuất sắc và phát triển nhiều tài năng. Tuy nhiên, dù được hưởng những điều kiện thuận lợi trong cuộc sống, cô ấy quyết tâm không để điều đó định nghĩa bản thân mà muốn được định nghĩa bởi việc luôn phấn đấu vươn lên đỉnh cao bằng mọi giá, luôn nỗ lực hơn người khác.</p>
+            </div>
+
+            <!-- Family Background -->
+            <div class="family-background">
+                <h3 class="family-title">
+                    <i class="fas fa-users"></i> Thông tin gia đình
+                </h3>
+                
+                <div class="family-content">
+                    <div class="family-member">
+                        <h4 class="member-name">Bố - Mikhail Kujou</h4>
+                        <p class="member-relation">Người Nga, làm việc trong lĩnh vực kinh doanh quốc tế</p>
+                        <p>Người đã ảnh hưởng nhiều đến tính cách mạnh mẽ và quyết tâm của Alisa. Công việc của ông là lý do chính cho việc chuyển đổi giữa Nga và Nhật Bản nhiều lần.</p>
+                    </div>
+                    
+                    <div class="family-member">
+                        <h4 class="member-name">Mẹ - Kujou (không rõ tên)</h4>
+                        <p class="member-relation">Người Nhật, nội trợ</p>
+                        <p>Mang đến cho Alisa nét dịu dàng và tinh tế của văn hóa Nhật Bản, đồng thời là người khuyên Alisa chuyển đến Học viện Giáo dục Seirei.</p>
+                    </div>
+                    
+                    <div class="family-member">
+                        <h4 class="member-name">Chị gái - Maria Kujou</h4>
+                        <p class="member-relation">Hơn Alisa một tuổi</p>
+                        <p>Cùng sinh ra ở Nga nhưng có tính cách trái ngược hoàn toàn - dịu dàng, ấm áp và thẳng thắn trong biểu lộ cảm xúc.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <h2 class="section-title" style="margin-top: 50px;">
+                <i class="fas fa-road"></i> Hành trình cuộc đời
+            </h2>
+            
+            <div class="timeline-container">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">
+                            <i class="fas fa-calendar-alt"></i> Sinh ra tại Nga
+                        </h3>
+                        <p class="timeline-description">Alisa và Maria sinh ra ở Nga. Alisa ở lại Nga cho đến khi năm tuổi.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">
+                            <i class="fas fa-calendar-alt"></i> 5 tuổi - Chuyển đến Nhật Bản
+                        </h3>
+                        <p class="timeline-description">Chuyển đến Nhật Bản cùng gia đình và ở đó cho đến năm thứ tư của trường tiểu học.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">
+                            <i class="fas fa-calendar-alt"></i> Trở lại Nga
+                        </h3>
+                        <p class="timeline-description">Quay trở lại Nga để hoàn thành chương trình tiểu học, bắt đầu hình thành tính cách độc lập.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">
+                            <i class="fas fa-calendar-alt"></i> 14 tuổi - Trở lại Nhật Bản
+                        </h3>
+                        <p class="timeline-description">Chuyển trở lại Nhật Bản để học năm thứ ba của trường trung học cơ sở.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">
+                            <i class="fas fa-calendar-alt"></i> Vladivostok - Bước ngoặt
+                        </h3>
+                        <p class="timeline-description">Thời gian ở Vladivostok hình thành tính cách lạnh lùng và cứng nhắc khi chứng kiến sự thiếu động lực của bạn cùng lớp.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-year">
+                            <i class="fas fa-calendar-alt"></i> Học viện Seirei
+                        </h3>
+                        <p class="timeline-description">Chuyển đến Học viện Giáo dục Seirei danh tiếng, đạt vị trí thứ nhất trong kỳ thi năng lực ngay sau khi nhập học.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personality Development -->
+            <div class="development-section">
+                <h2 class="section-title">
+                    <i class="fas fa-user-graduate"></i> Phát triển tính cách
+                </h2>
+                
+                <div class="development-grid">
+                    <div class="development-card">
+                        <h3 class="development-title">
+                            <i class="fas fa-brain"></i> Hình thành tính cách
+                        </h3>
+                        <p>Khi lớn lên, cô bắt đầu trau dồi các kỹ năng xã hội, nhưng những lý tưởng và quan điểm cơ bản của cô vẫn không thay đổi.</p>
+                    </div>
+                    
+                    <div class="development-card">
+                        <h3 class="development-title">
+                            <i class="fas fa-snowflake"></i> Vladivostok - Bước ngoặt
+                        </h3>
+                        <p>Tính cách lạnh lùng và cứng nhắc hình thành khi chứng kiến sự thất vọng và thiếu động lực từ bạn cùng lớp, tạo ra thái độ khinh thường vô thức.</p>
+                    </div>
+                    
+                    <div class="development-card">
+                        <h3 class="development-title">
+                            <i class="fas fa-shield-alt"></i> Cơ chế phòng vệ
+                        </h3>
+                        <p>Khi nhận ra thái độ của mình, cô vạch ra ranh giới để tránh xung đột, khiến cô cảm thấy xa cách và dè dặt với người khác.</p>
+                    </div>
+                    
+                    <div class="development-card">
+                        <h3 class="development-title">
+                            <i class="fas fa-star"></i> Tài năng và cạnh tranh
+                        </h3>
+                        <p>Cô có tài năng và tinh thần cạnh tranh giúp cô nổi bật so với những người khác, luôn muốn chứng minh bản thân bằng năng lực thực sự.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- School Achievement -->
+            <div class="achievement-section">
+                <h3 class="achievement-title">
+                    <i class="fas fa-award"></i> Thành tích học tập ấn tượng
+                </h3>
+                
+                <ul class="achievement-list">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Ngay sau khi chuyển đến Học viện Seirei, đạt vị trí thứ nhất trong kỳ thi năng lực toàn trường</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Đạt thành tích này dù đã xa Nhật Bản 5 năm và không nắm rõ xu hướng thi cử</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Trở thành học sinh nổi tiếng ngay lập tức, được mọi người vây quanh như một người nổi tiếng</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Vẻ đẹp tuyệt trần góp phần vào sự nổi tiếng, thu hút sự chú ý của hầu hết mọi người xung quanh</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Luôn ngạc nhiên khi gặp người không quan tâm đến mình, vì đã quen với sự chú ý</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Image Gallery -->
+            <div class="image-gallery">
+                <div>
+                    <img src="https://i.pinimg.com/736x/51/90/65/5190659be06c5685e5b57c43459984fc.jpg" 
+                         alt="Alisa thời thơ ấu" 
+                         class="gallery-image">
+                </div>
+                
+                <div>
+                    <img src="https://i.pinimg.com/736x/cf/4c/27/cf4c27c224ecb0cc1af3af48c1f4db90.jpg" 
+                         alt="Alisa tại Học viện Seirei" 
+                         class="gallery-image">
+                </div>
+                
+                <div>
+                    <img src="https://i.pinimg.com/736x/5b/1c/50/5b1c50d1fe031b139471ea0bd9e77364.jpg" 
+                         alt="Alisa biểu cảm đặc trưng" 
+                         class="gallery-image">
+                </div>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="page-navigation">
+                <a href="index.html" class="nav-button">
+                    <i class="fas fa-home"></i> Trang chính
+                </a>
+                
+                <div style="display: flex; gap: 15px;">
+                    <a href="tinhcach.html" class="nav-button">
+                        <i class="fas fa-arrow-left"></i> Trang trước (Tính cách)
+                    </a>
+                    
+                    <a href="moiquanhe.html" class="nav-button">
+                        Trang tiếp theo (Mối quan hệ) <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Trang web fan-made về Alisa Mikhailovna Kujou | © 2023 | Lý lịch</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to go back to previous page
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+        
+        // Add animation for timeline items
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const developmentCards = document.querySelectorAll('.development-card');
+            const familyMembers = document.querySelectorAll('.family-member');
+            
+            // Observer for timeline items
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 150);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Set initial state and observe timeline items
+            timelineItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                timelineObserver.observe(item);
+            });
+            
+            // Observer for development cards
+            const developmentObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Set initial state and observe development cards
+            developmentCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                developmentObserver.observe(card);
+            });
+            
+            // Observer for family members
+            const familyObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Set initial state and observe family members
+            familyMembers.forEach(member => {
+                member.style.opacity = '0';
+                member.style.transform = 'translateY(20px)';
+                member.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                familyObserver.observe(member);
+            });
+            
+            // Add click effect to cards
+            developmentCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+            
+            // Add hover effect for gallery images
+            const galleryImages = document.querySelectorAll('.gallery-image');
+            galleryImages.forEach(image => {
+                image.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.25)';
+                });
+                
+                image.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+                });
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Timeline item click effect
+        const timelineContents = document.querySelectorAll('.timeline-content');
+        timelineContents.forEach(content => {
+            content.addEventListener('click', function() {
+                this.style.backgroundColor = '#e3e8f5';
+                setTimeout(() => {
+                    this.style.backgroundColor = '';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>

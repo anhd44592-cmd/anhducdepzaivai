@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính cách Alisa Mikhailovna Kujou</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8edff 100%);
+            color: #333;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #1a237e, #283593, #3949ab);
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-bottom: 5px solid #ff4081;
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .back-button {
+            margin-top: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Styles */
+        .content-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #1a237e;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ff4081;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: #ff4081;
+        }
+
+        /* Personality Introduction */
+        .intro-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .intro-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .intro-text p {
+            margin-bottom: 20px;
+        }
+
+        .personality-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s;
+        }
+
+        .personality-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Personality Traits Grid */
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .trait-card {
+            background: linear-gradient(145deg, #f8f9ff, #eef1ff);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s;
+            border-left: 5px solid #3949ab;
+        }
+
+        .trait-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .trait-icon {
+            font-size: 2.5rem;
+            color: #3949ab;
+            margin-bottom: 15px;
+        }
+
+        .trait-title {
+            color: #1a237e;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .trait-description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Tsundere Analysis */
+        .tsundere-analysis {
+            background: linear-gradient(135deg, #fff8e1, #fff3e0);
+            border-radius: 12px;
+            padding: 35px;
+            margin: 40px 0;
+            border-left: 5px solid #ff9800;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .analysis-title {
+            color: #e65100;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .analysis-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .analysis-point {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .point-title {
+            color: #e65100;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Character Comparison */
+        .comparison-section {
+            margin-top: 50px;
+        }
+
+        .comparison-title {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .comparison-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .comparison-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .character-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff4081;
+        }
+
+        .character-traits {
+            list-style: none;
+            padding: 0;
+        }
+
+        .character-traits li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .character-traits li:last-child {
+            border-bottom: none;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 5px solid #4caf50;
+            position: relative;
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            background: #4caf50;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #2e7d32;
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 0 20px;
+        }
+
+        .quote-author {
+            text-align: right;
+            color: #555;
+            font-weight: 600;
+        }
+
+        /* Page Navigation */
+        .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-button {
+            background: linear-gradient(to right, #3949ab, #283593);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .nav-button:hover {
+            background: linear-gradient(to right, #283593, #1a237e);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #666;
+            font-size: 0.9rem;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .traits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-navigation {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-button {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Tính cách Alisa Mikhailovna Kujou</h1>
+                <div class="subtitle">Tsundere tài năng với trái tim ấm áp ẩn sau vẻ ngoài lạnh lùng</div>
+                <button class="back-button" onclick="goBack()">
+                    <i class="fas fa-arrow-left"></i> Quay lại trang chính
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Main Content Section -->
+        <div class="content-section">
+            <!-- Introduction -->
+            <div class="intro-container">
+                <div class="intro-text">
+                    <p>Cô ấy luôn đứng đầu trong các bài kiểm tra trên lớp, giỏi thể thao và giữ chức thủ quỹ hội học sinh từ năm nhất. Cô ấy là học sinh giỏi với điểm số xuất sắc và hạnh kiểm tốt, và không đặc biệt quan tâm đến người khác, dù tốt hay xấu.</p>
+                    
+                    <p>Tuy nhiên, mọi người đã biết rõ trong năm học của cô ấy rằng cô ấy cực kỳ khắt khe với người ngồi cạnh trong lớp, người này là hiện thân rõ ràng cho sự thiếu nghiêm túc của trường học.</p>
+                    
+                    <p>Alisa hiểu rằng sắc đẹp là một trong những vũ khí trong các mối quan hệ giữa người với người, và tất nhiên, cô ấy cũng cố gắng hoàn thiện bản thân về mặt này.</p>
+                </div>
+                
+                <div>
+                    <img src="https://i.pinimg.com/736x/5b/1c/50/5b1c50d1fe031b139471ea0bd9e77364.jpg" 
+                         alt="Alisa - Biểu cảm đặc trưng" 
+                         class="personality-image">
+                </div>
+            </div>
+
+            <!-- Personality Traits -->
+            <h2 class="section-title">
+                <i class="fas fa-brain"></i> Đặc điểm tính cách chính
+            </h2>
+            
+            <div class="traits-grid">
+                <div class="trait-card">
+                    <div class="trait-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="trait-title">Học sinh ưu tú</h3>
+                    <p class="trait-description">Luôn đứng đầu lớp, xuất sắc trong học tập và thể thao, giữ chức thủ quỹ hội học sinh từ năm nhất với điểm số và hạnh kiểm tốt.</p>
+                </div>
+                
+                <div class="trait-card">
+                    <div class="trait-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3 class="trait-title">Bề ngoài lạnh lùng</h3>
+                    <p class="trait-description">Không đặc biệt quan tâm đến người khác, thường tỏ ra xa cách và khắt khe, đặc biệt với những người thiếu nghiêm túc.</p>
+                </div>
+                
+                <div class="trait-card">
+                    <div class="trait-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="trait-title">Ý thức về vẻ đẹp</h3>
+                    <p class="trait-description">Nhận thức rõ sức mạnh của ngoại hình nhưng không lạm dụng, tự hào về vẻ đẹp tự nhiên mà không vi phạm nội quy trường học.</p>
+                </div>
+                
+                <div class="trait-card">
+                    <div class="trait-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="trait-title">Tính chiếm hữu</h3>
+                    <p class="trait-description">Dễ ghen tuông và có tính chiếm hữu cao, đặc biệt khi Masachika giao tiếp với các cô gái khác, dù thường che giấu cảm xúc này.</p>
+                </div>
+            </div>
+
+            <!-- Tsundere Analysis -->
+            <div class="tsundere-analysis">
+                <h3 class="analysis-title">
+                    <i class="fas fa-heartbeat"></i> Phân tích kiểu Tsundere
+                </h3>
+                
+                <div class="analysis-content">
+                    <div class="analysis-point">
+                        <h4 class="point-title">
+                            <i class="fas fa-fire"></i> Tsun (lạnh lùng)
+                        </h4>
+                        <p>Thể hiện thái độ lạnh lùng, xa cách, thường trách mắng Masachika vì thiếu nghiêm túc và hay trêu chọc anh.</p>
+                    </div>
+                    
+                    <div class="analysis-point">
+                        <h4 class="point-title">
+                            <i class="fas fa-heart"></i> Dere (ngọt ngào)
+                        </h4>
+                        <p>Yêu Masachika say đắm nhưng thường không nhận ra hoặc phủ nhận tình cảm của mình, chỉ thể hiện trong những khoảnh khắc hiếm hoi.</p>
+                    </div>
+                    
+                    <div class="analysis-point">
+                        <h4 class="point-title">
+                            <i class="fas fa-balance-scale"></i> Sự phủ nhận
+                        </h4>
+                        <p>Mọi nỗ lực thừa nhận tình cảm đều bị cô ấy phủ nhận cho đến rất lâu sau đó, tạo nên sự mâu thuẫn nội tâm đặc trưng.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Personality Details -->
+            <h2 class="section-title" style="margin-top: 50px;">
+                <i class="fas fa-user-circle"></i> Chi tiết thêm về tính cách
+            </h2>
+            
+            <div class="intro-text">
+                <p>Cô ấy không trang điểm vì điều đó trái với nội quy trường học, nhưng vẫn rất tự hào về vẻ đẹp của mình, có thể sánh ngang với bất kỳ người nổi tiếng nào. Cô ấy không đặc biệt quan tâm đến việc thu hút sự chú ý của người khác giới, nhưng cô ấy biết rằng vẻ ngoài của mình sẽ thu hút sự chú ý của mọi người.</p>
+                
+                <p>Để miêu tả cô ấy một cách chính xác nhất, cô ấy là một người thuộc kiểu tsundere, thường hay trêu chọc Masachika. Nhưng thực tế, Alisa yêu Masachika say đắm, mặc dù hầu hết thời gian cô ấy không nhận ra tình cảm mãnh liệt của mình dành cho anh, và mọi nỗ lực thừa nhận điều này đều bị cô ấy phủ nhận cho đến rất lâu sau đó.</p>
+            </div>
+
+            <!-- Character Comparison -->
+            <div class="comparison-section">
+                <h3 class="comparison-title">So sánh với các nhân vật khác</h3>
+                
+                <div class="comparison-container">
+                    <div class="comparison-card">
+                        <h4 class="character-name">Alisa</h4>
+                        <ul class="character-traits">
+                            <li>Tsundere điển hình</li>
+                            <li>Học sinh ưu tú</li>
+                            <li>Lạnh lùng bề ngoài</li>
+                            <li>Trái tim ấm áp bên trong</li>
+                            <li>Dễ ghen tuông</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h4 class="character-name">Maria (Chị gái)</h4>
+                        <ul class="character-traits">
+                            <li>DereDere điển hình</li>
+                            <li>Dịu dàng, ấm áp</li>
+                            <li>Thẳng thắn bộc lộ cảm xúc</li>
+                            <li>Quan tâm đến người khác</li>
+                            <li>Ít phức tạp hơn</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h4 class="character-name">Masachika (Bạn cùng lớp)</h4>
+                        <ul class="character-traits">
+                            <li>Thiếu nghiêm túc</li>
+                            <li>Vui vẻ, hài hước</li>
+                            <li>Động lực học tập thấp</li>
+                            <li>Đối tượng tình cảm của Alisa</li>
+                            <li>Kiên nhẫn với Alisa</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quote Section -->
+            <div class="quote-section">
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="quote-text">
+                    "Một tsundere chân chính không bao giờ dễ dàng thừa nhận tình cảm của mình, nhưng trái tim họ lại ấm áp hơn bất kỳ ai."
+                </p>
+                <p class="quote-author">- Nhận xét từ fan về Alisa</p>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="page-navigation">
+                <a href="index.html" class="nav-button">
+                    <i class="fas fa-home"></i> Trang chính
+                </a>
+                
+                <div style="display: flex; gap: 15px;">
+                    <a href="Ngoaihinh.html" class="nav-button">
+                        <i class="fas fa-arrow-left"></i> Trang trước (Ngoại hình)
+                    </a>
+                    
+                    <a href="lylich.html" class="nav-button">
+                        Trang tiếp theo (Lý lịch) <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Trang web fan-made về Alisa Mikhailovna Kujou | © 2023 | Tính cách</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to go back to previous page
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+        
+        // Add animation for trait cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const traitCards = document.querySelectorAll('.trait-card');
+            const comparisonCards = document.querySelectorAll('.comparison-card');
+            
+            // Observer for trait cards
+            const traitObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Set initial state and observe trait cards
+            traitCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                traitObserver.observe(card);
+            });
+            
+            // Observer for comparison cards
+            const comparisonObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 150);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Set initial state and observe comparison cards
+            comparisonCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                comparisonObserver.observe(card);
+            });
+            
+            // Add click effect to trait cards
+            traitCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Add hover effect for images
+        const personalityImage = document.querySelector('.personality-image');
+        if (personalityImage) {
+            personalityImage.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.2)';
+            });
+            
+            personalityImage.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+            });
+        }
+    </script>
+</body>
+</html>

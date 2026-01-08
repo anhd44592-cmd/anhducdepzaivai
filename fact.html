@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fact thú vị về Alisa Mikhailovna Kujou</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffecb3 100%);
+            color: #333;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #ff9800, #fb8c00, #f57c00);
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-bottom: 5px solid #5d4037;
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .back-button {
+            margin-top: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Styles */
+        .content-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #e65100;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #5d4037;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: #5d4037;
+        }
+
+        /* Fact Grid */
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .fact-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s;
+            border: 1px solid #f0f0f0;
+            position: relative;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .fact-icon {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff9800, #fb8c00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .fact-header {
+            padding: 25px;
+            background: linear-gradient(135deg, #5d4037, #4e342e);
+            color: white;
+            position: relative;
+            min-height: 120px;
+        }
+
+        .fact-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .fact-category {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+
+        .fact-content {
+            padding: 25px;
+            position: relative;
+        }
+
+        .fact-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        /* Category Colors */
+        .category-academic .fact-header {
+            background: linear-gradient(135deg, #1565c0, #0d47a1);
+        }
+        
+        .category-academic .fact-icon {
+            background: linear-gradient(135deg, #1565c0, #0d47a1);
+        }
+
+        .category-family .fact-header {
+            background: linear-gradient(135deg, #7b1fa2, #6a1b9a);
+        }
+        
+        .category-family .fact-icon {
+            background: linear-gradient(135deg, #7b1fa2, #6a1b9a);
+        }
+
+        .category-appearance .fact-header {
+            background: linear-gradient(135deg, #c2185b, #ad1457);
+        }
+        
+        .category-appearance .fact-icon {
+            background: linear-gradient(135deg, #c2185b, #ad1457);
+        }
+
+        .category-food .fact-header {
+            background: linear-gradient(135deg, #388e3c, #2e7d32);
+        }
+        
+        .category-food .fact-icon {
+            background: linear-gradient(135deg, #388e3c, #2e7d32);
+        }
+
+        .category-personality .fact-header {
+            background: linear-gradient(135deg, #f57c00, #ef6c00);
+        }
+        
+        .category-personality .fact-icon {
+            background: linear-gradient(135deg, #f57c00, #ef6c00);
+        }
+
+        /* Fun Fact Highlight */
+        .fun-fact-highlight {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 5px solid #ff9800;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fun-fact-highlight::before {
+            content: "✨";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .fun-fact-title {
+            color: #e65100;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .fun-fact-content {
+            font-size: 1.2rem;
+            color: #5d4037;
+            font-style: italic;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Fact Statistics */
+        .statistics-section {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 12px;
+            padding: 35px;
+            margin: 40px 0;
+            border-left: 5px solid #388e3c;
+        }
+
+        .statistics-title {
+            color: #2e7d32;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .statistics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #388e3c;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* Did You Know Section */
+        .did-you-know {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 5px solid #1976d2;
+            position: relative;
+        }
+
+        .did-you-know::before {
+            content: "💡";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .did-you-know-title {
+            color: #0d47a1;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Page Navigation */
+        .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-button {
+            background: linear-gradient(to right, #ff9800, #fb8c00);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .nav-button:hover {
+            background: linear-gradient(to right, #fb8c00, #f57c00);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #666;
+            font-size: 0.9rem;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .fact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-navigation {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-button {
+                justify-content: center;
+            }
+            
+            .statistics-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Fact thú vị về Alisa</h1>
+                <div class="subtitle">Những điều bí mật và thú vị về tsundere tài năng</div>
+                <button class="back-button" onclick="goBack()">
+                    <i class="fas fa-arrow-left"></i> Quay lại trang chính
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Main Content Section -->
+        <div class="content-section">
+            <!-- Introduction -->
+            <h2 class="section-title">
+                <i class="fas fa-lightbulb"></i> Những sự thật thú vị
+            </h2>
+            
+            <p style="margin-bottom: 30px; font-size: 1.1rem; color: #555;">
+                Khám phá những fact độc đáo, bí mật và thú vị về Alisa Mikhailovna Kujou mà không phải ai cũng biết. Từ học tập, gia đình đến những sở thích cá nhân đặc biệt.
+            </p>
+
+            <!-- Fact Grid -->
+            <div class="fact-grid">
+                <!-- Fact 1: Academic Excellence -->
+                <div class="fact-card category-academic">
+                    <div class="fact-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="fact-header">
+                        <h3 class="fact-title">
+                            <i class="fas fa-trophy"></i> Thành tích học tập phi thường
+                            <span class="fact-category">Học tập</span>
+                        </h3>
+                    </div>
+                    <div class="fact-content">
+                        <p class="fact-description">
+                            Mặc dù trở lại Nhật Bản sau 5 năm vắng mặt và chưa quen với thể thức thi, Alisa, bất chấp những bất lợi đáng kể đó, đã đạt được thứ hạng cao nhất trong lớp ngay sau khi chuyển trường.
+                        </p>
+                        <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                            <strong>💡 Điểm đặc biệt:</strong> Đây là minh chứng cho trí thông minh và khả năng thích ứng tuyệt vời của Alisa.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fact 2: Family Relationship -->
+                <div class="fact-card category-family">
+                    <div class="fact-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="fact-header">
+                        <h3 class="fact-title">
+                            <i class="fas fa-home"></i> Cách gọi chị gái
+                            <span class="fact-category">Gia đình</span>
+                        </h3>
+                    </div>
+                    <div class="fact-content">
+                        <p class="fact-description">
+                            Alisa không gọi Maria là "chị gái" (お姉ちゃん Onee-chan), một thuật ngữ phổ biến trong văn hóa Nhật Bản. Do được nuôi dạy theo kiểu Nga, nơi anh chị em thường được gọi bằng tên riêng.
+                        </p>
+                        <div style="background: #f3e5f5; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                            <strong>🎭 Tính cách:</strong> Alisa thích dùng biệt danh hơn vì gọi Maria là "chị gái" sẽ hàm ý sự phụ thuộc mà cô không muốn truyền đạt.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fact 3: Birthday -->
+                <div class="fact-card category-family">
+                    <div class="fact-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <div class="fact-header">
+                        <h3 class="fact-title">
+                            <i class="fas fa-calendar"></i> Ngày sinh đặc biệt
+                            <span class="fact-category">Cá nhân</span>
+                        </h3>
+                    </div>
+                    <div class="fact-content">
+                        <p class="fact-description">
+                            Alisa sinh ngày 7 tháng 11 - trùng với ngày Cách mạng Tháng Mười (October Revolution) trong lịch sử Nga. Đây là một chi tiết thú vị phản ánh nguồn gốc Nga của cô.
+                        </p>
+                        <div style="background: #fff3e0; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                            <strong>🇷🇺 Gốc Nga:</strong> Sinh nhật của Alisa mang ý nghĩa lịch sử và văn hóa Nga sâu sắc.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fact 4: Hair Color Change -->
+                <div class="fact-card category-appearance">
+                    <div class="fact-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="fact-header">
+                        <h3 class="fact-title">
+                            <i class="fas fa-user"></i> Sự thay đổi màu tóc
+                            <span class="fact-category">Ngoại hình</span>
+                        </h3>
+                    </div>
+                    <div class="fact-content">
+                        <p class="fact-description">
+                            Việc tóc chuyển từ màu vàng sang màu bạc ở độ tuổi trẻ là cực kỳ hiếm gặp. Sự mất sắc tố thường xảy ra do tuổi tác hoặc do chứng mất sắc tố tóc (achromotrichia).
+                        </p>
+                        <div style="background: #fce4ec; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                            <strong>🧬 Hiếm gặp:</strong> Chỉ khoảng 0.001% dân số trải qua hiện tượng này ở độ tuổi thanh thiếu niên.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fact 5: Cup Size -->
+                <div class="fact-card category-appearance">
+                    <div class="fact-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="fact-header">
+                        <h3 class="fact-title">
+                            <i class="fas fa-female"></i> Thông tin cơ thể
+                            <span class="fact-category">Ngoại hình</span>
+                        </h3>
+                    </div>
+                    <div class="fact-content">
+                        <p class="fact-description">
+                            Đầu loạt phim, Yuki ước tính cỡ áo ngực của Alisa là 'E'. Khi Masachika hỏi, cô ấy nói bằng tiếng Nga rằng ước tính này hầu như không chính xác. Sau đó được xác nhận là 'F', và cuối cùng là 'H'.
+                        </p>
+                        <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                            <strong>📏 Chi tiết:</strong> Các thành viên câu lạc bộ thủ công, những người đã làm nhiều trang phục cho Alisa, xác nhận cỡ áo ngực đã tăng lên 'H'.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fact 6: Sweet Tooth -->
+                <div class="fact-card category-food">
+                    <div class="fact-icon">
+                        <i class="fas fa-candy-cane"></i>
+                    </div>
+                    <div class="fact-header">
+                        <h3 class="fact-title">
+                            <i class="fas fa-ice-cream"></i> Niềm yêu thích đồ ngọt
+                            <span class="fact-category">Ẩm thực</span>
+                        </h3>
+                    </div>
+                    <div class="fact-content">
+                        <p class="fact-description">
+                            Alisa có niềm yêu thích đặc biệt đối với đồ ngọt, đặc biệt là sô cô la. Đây là một trong những điểm yếu ít ỏi của cô gái tsundere lạnh lùng này.
+                        </p>
+                        <div style="background: #fff3e0; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                            <strong>🍫 Sở thích:</strong> Sô cô la là món khoái khẩu của Alisa, thường được dùng như một phần thưởng khi cô đạt được thành tích.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fact 7: Germ Phobia -->
+                <div class="fact-card category-personality">
+                    <div class="fact-icon">
+                        <i class="fas fa-bacteria"></i>
+                    </div>
+                    <div class="fact-header">
+                        <h3 class="fact-title">
+                            <i class="fas fa-shield-virus"></i> Ác cảm với vi trùng
+                            <span class="fact-category">Tính cách</span>
+                        </h3>
+                    </div>
+                    <div class="fact-content">
+                        <p class="fact-description">
+                            Theo Masachika, Alisa thể hiện sự ác cảm đáng chú ý đối với vi trùng, đặc biệt là trong những tình huống mà cô ấy có thể tiếp xúc vật lý với nam giới khác.
+                        </p>
+                        <div style="background: #e8eaf6; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                            <strong>🧼 Tính cách:</strong> Điều này cho thấy Alisa có tính cẩn thận và ý thức vệ sinh cao, cũng như sự dè dặt trong tiếp xúc vật lý.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fun Fact Highlight -->
+            <div class="fun-fact-highlight">
+                <h3 class="fun-fact-title">
+                    <i class="fas fa-star"></i> Fact đặc biệt nhất
+                </h3>
+                <p class="fun-fact-content">
+                    "Alisa là một trong số ít nhân vật anime có sự thay đổi màu tóc tự nhiên từ vàng sang bạc ở tuổi thanh thiếu niên - một hiện tượng cực kỳ hiếm gặp trong thực tế!"
+                </p>
+            </div>
+
+            <!-- Image Gallery -->
+            <div class="image-gallery">
+                <div>
+                    <img src="https://i.pinimg.com/736x/38/8d/ad/388dadf3d3f23a95196de4a06d6024d9.jpg" 
+                         alt="Alisa với biểu cảm đáng yêu" 
+                         class="gallery-image">
+                </div>
+                
+                <div>
+                    <img src="https://i.pinimg.com/736x/5b/1c/50/5b1c50d1fe031b139471ea0bd9e77364.jpg" 
+                         alt="Alisa tsundere" 
+                         class="gallery-image">
+                </div>
+                
+                <div>
+                    <img src="https://i.pinimg.com/736x/cf/4c/27/cf4c27c224ecb0cc1af3af48c1f4db90.jpg" 
+                         alt="Alisa nghiêm túc" 
+                         class="gallery-image">
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="statistics-section">
+                <h3 class="statistics-title">
+                    <i class="fas fa-chart-bar"></i> Thống kê về Alisa
+                </h3>
+                
+                <div class="statistics-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">1<sup>st</sup></div>
+                        <div class="stat-label">Thứ hạng trong lớp</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-number">7/11</div>
+                        <div class="stat-label">Ngày sinh (7 tháng 11)</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Năm xa Nhật Bản</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-number">H</div>
+                        <div class="stat-label">Cỡ áo ngực</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Quốc tịch (Nga-Nhật)</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-number">Tsundere</div>
+                        <div class="stat-label">Kiểu tính cách</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Did You Know Section -->
+            <div class="did-you-know">
+                <h3 class="did-you-know-title">
+                    <i class="fas fa-question-circle"></i> Bạn có biết?
+                </h3>
+                
+                <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                    <p style="color: #555; line-height: 1.7; font-size: 1.1rem;">
+                        Alisa có thể nói thành thạo cả tiếng Nhật và tiếng Nga. Cô thường dùng tiếng Nga khi xúc động hoặc khi muốn trêu chọc Masachika. Việc này không chỉ thể hiện nguồn gốc lai của cô mà còn là một phần quan trọng trong tính cách tsundere.
+                    </p>
+                    
+                    <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 200px;">
+                            <h4 style="color: #0d47a1; margin-bottom: 10px;"><i class="fas fa-language"></i> Ngôn ngữ</h4>
+                            <p style="font-size: 0.9rem;">Tiếng Nhật (thành thạo), Tiếng Nga (bản ngữ)</p>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 200px;">
+                            <h4 style="color: #0d47a1; margin-bottom: 10px;"><i class="fas fa-heart"></i> Cách thể hiện tình cảm</h4>
+                            <p style="font-size: 0.9rem;">Thường dùng tiếng Nga để tán tỉnh Masachika</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="page-navigation">
+                <a href="index.html" class="nav-button">
+                    <i class="fas fa-home"></i> Trang chính
+                </a>
+                
+                <div style="display: flex; gap: 15px;">
+                    <a href="moiquanhe.html" class="nav-button">
+                        <i class="fas fa-arrow-left"></i> Trang trước (Mối quan hệ)
+                    </a>
+                    
+                    <a href="trichloinoi.html" class="nav-button">
+                        Trang tiếp theo (Trích lời nói) <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Trang web fan-made về Alisa Mikhailovna Kujou | © 2023 | Fact thú vị</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to go back to previous page
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+        
+        // Add animation for fact cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const factCards = document.querySelectorAll('.fact-card');
+            const galleryImages = document.querySelectorAll('.gallery-image');
+            const statItems = document.querySelectorAll('.stat-item');
+            
+            // Observer for fact cards
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0) rotate(0deg)';
+                        }, index * 200);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Set initial state and observe fact cards
+            factCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px) rotate(-5deg)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                cardObserver.observe(card);
+            });
+            
+            // Observer for gallery images
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'scale(1) rotate(0deg)';
+                        }, index * 150);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Set initial state and observe gallery images
+            galleryImages.forEach(image => {
+                image.style.opacity = '0';
+                image.style.transform = 'scale(0.8) rotate(-10deg)';
+                image.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                imageObserver.observe(image);
+            });
+            
+            // Observer for stat items
+            const statObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                            // Add counting animation for numbers
+                            const statNumber = entry.target.querySelector('.stat-number');
+                            if (statNumber) {
+                                animateCountUp(statNumber);
+                            }
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Set initial state and observe stat items
+            statItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                statObserver.observe(item);
+            });
+            
+            // Counting animation function
+            function animateCountUp(element) {
+                const text = element.textContent;
+                const isNumber = /^\d+$/.test(text.replace('st', '').replace('nd', '').replace('rd', '').replace('th', ''));
+                
+                if (isNumber) {
+                    const number = parseInt(text);
+                    let current = 0;
+                    const increment = number / 20;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= number) {
+                            current = number;
+                            clearInterval(timer);
+                        }
+                        element.textContent = Math.floor(current) + (text.includes('st') ? 'st' : 
+                                                     text.includes('nd') ? 'nd' : 
+                                                     text.includes('rd') ? 'rd' : 
+                                                     text.includes('th') ? 'th' : '');
+                    }, 50);
+                }
+            }
+            
+            // Add hover effect for fact cards
+            factCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.fact-icon');
+                    if (icon) {
+                        icon.style.transform = 'scale(1.2) rotate(15deg)';
+                        icon.style.transition = 'transform 0.3s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.fact-icon');
+                    if (icon) {
+                        icon.style.transform = 'scale(1) rotate(0deg)';
+                    }
+                });
+            });
+            
+            // Add click effect to fact cards
+            factCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02) rotate(0deg)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-10px) rotate(1deg)';
+                    }, 150);
+                    
+                    // Show fact content with animation
+                    const content = this.querySelector('.fact-content');
+                    if (content) {
+                        content.style.backgroundColor = '#f9f9f9';
+                        setTimeout(() => {
+                            content.style.backgroundColor = '';
+                        }, 300);
+                    }
+                });
+            });
+            
+            // Add fun hover effect for gallery images
+            galleryImages.forEach(image => {
+                image.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.25)';
+                    this.style.zIndex = '10';
+                });
+                
+                image.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.2)';
+                    this.style.zIndex = '1';
+                });
+            });
+            
+            // Add CSS for additional animations
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes float {
+                    0% { transform: translateY(0px); }
+                    50% { transform: translateY(-10px); }
+                    100% { transform: translateY(0px); }
+                }
+                
+                .fun-fact-highlight {
+                    animation: float 3s ease-in-out infinite;
+                }
+                
+                .fact-icon {
+                    transition: transform 0.3s ease;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+        
+        // Add random fact generator
+        const randomFacts = [
+            "Alisa có thể giải toán cao cấp nhanh hơn hầu hết giáo viên",
+            "Cô từng thắng giải piano quốc gia ở Nga khi mới 12 tuổi",
+            "Alisa có thể nấu cả món ăn Nga và Nhật ngon như đầu bếp chuyên nghiệp",
+            "Cô có thói quen đọc sách khoa học trước khi ngủ",
+            "Alisa không bao giờ đi học muộn dù chỉ một phút"
+        ];
+        
+        const funFactElement = document.querySelector('.fun-fact-content');
+        if (funFactElement) {
+            // Change fact every 10 seconds
+            setInterval(() => {
+                const randomIndex = Math.floor(Math.random() * randomFacts.length);
+                funFactElement.style.opacity = '0';
+                setTimeout(() => {
+                    funFactElement.textContent = `"${randomFacts[randomIndex]}"`;
+                    funFactElement.style.opacity = '1';
+                }, 500);
+            }, 10000);
+        }
+    </script>
+</body>
+</html>
